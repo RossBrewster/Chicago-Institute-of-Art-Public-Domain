@@ -1,0 +1,107 @@
+body {
+  background-image: url("../images/gridOpaque.png");
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: #ee9eba;
+  width: 90vw;
+  height: 90vh;
+  margin: 3rem auto;
+  border-radius: 41px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.eyes {
+  margin: 0 auto;
+  margin: -2rem 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.droopy {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.hero-section {
+  align-self: center;
+  margin-top: -3rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+}
+
+.red-container {
+  width: 85vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0;
+  background-color: #eb4745;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.orange-container {
+  width: 80vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.2rem;
+  background-color: #e88728;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.yellow-container {
+  width: 75vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.3rem;
+  background-color: #f1b021;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.green-container {
+  width: 70vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.4rem;
+  background-color: #6fb94f;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.blue-container {
+  width: 65vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.4rem;
+  background-color: #3ca4d9;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}

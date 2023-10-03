@@ -1,0 +1,64 @@
+.red-button {
+  width: 16rem;
+  height: 3rem;
+  margin: 2rem;
+  background-color: #eb4745;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  border: solid 1px black;
+}
+
+.orange-button {
+  width: 15rem;
+  height: 2.7rem;
+  background-color: #e88728;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  border: solid 1px black;
+}
+
+.yellow-button {
+  width: 14rem;
+  height: 2.4rem;
+  background-color: #f1b021;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  border: solid 1px black;
+}
+
+.green-button {
+  width: 13rem;
+  height: 2.1rem;
+  background-color: #6fb94f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  border: solid 1px black;
+}
+
+.blue-button {
+  width: 12rem;
+  height: 1.8rem;
+  background-color: #3ca4d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
+  border: solid 1px black;
+}
+
+button {
+  width: 90%;
+  height: 1.5rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 2.5rem;
+}

@@ -1,0 +1,65 @@
+.red-container {
+  width: 90vw;
+  height: auto;
+  bottom: 2rem;
+  top: 2rem;
+  background-color: #eb4745;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.orange-container {
+  width: 85vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.2rem;
+  background-color: #e88728;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.yellow-container {
+  width: 80vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.3rem;
+  background-color: #f1b021;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.green-container {
+  width: 75vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.4rem;
+  background-color: #6fb94f;
+  position: absolute;
+  border-radius: 39px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.blue-container {
+  width: 70vw;
+  height: auto;
+  bottom: 1.5rem;
+  top: 0.4rem;
+  background-color: #3ca4d9;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 39px;
+  border: solid 1px black;
+}

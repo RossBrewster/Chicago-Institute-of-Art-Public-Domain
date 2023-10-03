@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Erica+One&display=swap" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/containers.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -15,15 +20,38 @@
 <body>
   <div class="container">
     <div class="eyes">
-      <img class="droopy" src="images/droopyEyes.svg" alt="droopyEyes">
+      <img id="droopy" src="images/droopyEyes.svg" alt="droopyEyes">
     </div>
-    <div class="hero-section">
-      <div class="red-container">
+    <div class="hero-section ">
+      <div class="red-container" id="home-red-container">
         <div class="orange-container">
           <div class="yellow-container">
             <div class="green-container">
               <div class="blue-container">
-
+                <div class="row hero-content">
+                  <h1 class="heading">Chicago Institute of Art Public Domain</h1>
+                </div>
+                <form class="home-form">
+                  <div>
+                    <label for="search" class="hidden">Search</label>
+                  </div>
+                  <div class="row hero-content">
+                    <input type="text" id="search" class="search-bar"/>
+                  </div>
+                  <div class="row hero-content">
+                    <div class="red-button">
+                      <div class="orange-button">
+                        <div class="yellow-button">
+                          <div class="green-button">
+                            <div class="blue-button">
+                              <button type="submit">Search</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

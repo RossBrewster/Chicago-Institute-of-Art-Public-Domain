@@ -11,6 +11,7 @@ const $searchButtonTwo = document.querySelector('.red-button.small');
 let resultPage = 1;
 const $leftArrow = document.querySelector('.fa-arrow-left');
 const $rightArrow = document.querySelector('.fa-arrow-right');
+const $resultsForm = document.querySelector('.results-view-form > form');
 
 $searchButtonTwo.addEventListener('click', getSearchValue2);
 $searchButton.addEventListener('click', getSearchValue);
@@ -23,7 +24,7 @@ function getSearchValue2(event) {
   results = [{}, {}, {}, {}];
   event.preventDefault();
   $searchQuery = $searchBarTwo.value;
-  $homeForm.reset();
+  $resultsForm.reset();
   $containerOne.setAttribute('class', 'container-1 hidden');
   $containerTwo.setAttribute('class', 'container-2');
   get4Results($searchQuery, resultPage);

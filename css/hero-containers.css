@@ -85,3 +85,22 @@
   max-height: 100%;
   max-width: 100%;
 }
+
+@media only screen and (width < 1000px) {
+  .container-1 {
+    width: 90vw;
+    height: 90%;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .red-container,
+  .orange-container,
+  .yellow-container,
+  .green-container,
+  .blue-container {
+    margin-bottom: 1rem;
+    width: 99%;
+  }
+}

@@ -131,10 +131,6 @@ body {
   }
 }
 
-.container-2 {
-  gap: 1rem;
-}
-
 .search-row {
   /* height: 1.5rem; */
   display: flex;
@@ -183,9 +179,8 @@ body {
 .result-4 {
   width: 20%;
   height: 35vh;
-  border-radius: px;
+  border-radius: 27px;
   overflow: hidden;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

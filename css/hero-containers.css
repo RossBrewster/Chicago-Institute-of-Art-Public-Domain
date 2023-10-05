@@ -6,6 +6,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .red-container {
@@ -73,7 +75,7 @@
 
 .droopy-eyes {
   margin-top: -3rem;
-  height: 30%;
+  height: 100%;
   z-index: 1;
   display: flex;
   justify-content: center;

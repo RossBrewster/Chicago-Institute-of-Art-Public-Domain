@@ -76,7 +76,7 @@ function load4ResultsInfo() {
 function renderResults() {
   $allResults.innerHTML = '';
   const $resultOne = document.createElement('div');
-  $resultOne.setAttribute('class', 'result-1');
+  $resultOne.setAttribute('class', 'result-1 xs');
   $allResults.appendChild($resultOne);
   const $imageDivOne = document.createElement('div');
   $imageDivOne.setAttribute('class', 'image-1');
@@ -95,7 +95,7 @@ function renderResults() {
   $titleDivOne.appendChild($titleOne);
 
   const $resultTwo = document.createElement('div');
-  $resultTwo.setAttribute('class', 'result-2');
+  $resultTwo.setAttribute('class', 'result-2 xs');
   $allResults.appendChild($resultTwo);
   const $imageDivTwo = document.createElement('div');
   $imageDivTwo.setAttribute('class', 'image-2');
@@ -114,7 +114,7 @@ function renderResults() {
   $titleDivTwo.appendChild($titleTwo);
 
   const $resultThree = document.createElement('div');
-  $resultThree.setAttribute('class', 'result-3');
+  $resultThree.setAttribute('class', 'result-3 xs');
   $allResults.appendChild($resultThree);
   const $imageDivThree = document.createElement('div');
   $imageDivThree.setAttribute('class', 'image-3');
@@ -133,7 +133,7 @@ function renderResults() {
   $titleDivThree.appendChild($titleThree);
 
   const $resultFour = document.createElement('div');
-  $resultFour.setAttribute('class', 'result-4');
+  $resultFour.setAttribute('class', 'result-4 xs');
   $allResults.appendChild($resultFour);
   const $imageDivFour = document.createElement('div');
   $imageDivFour.setAttribute('class', 'image-4');

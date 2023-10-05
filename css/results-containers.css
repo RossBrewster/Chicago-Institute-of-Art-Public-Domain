@@ -1,3 +1,13 @@
+.container-2 {
+  background-color: #ee9eba;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 41px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 90%;
+}
+
 .red-results-container {
   flex-basis: 100%;
   width: 90vw;

@@ -5,12 +5,33 @@ let $searchQuery = '';
 const $allResults = document.querySelector('.all-results');
 const $containerOne = document.querySelector('.container-1');
 const $containerTwo = document.querySelector('.container-2');
-const results = [{}, {}, {}, {}];
+let results = [{}, {}, {}, {}];
+const $searchBarTwo = document.querySelector('#results-view-search-bar');
+const $searchButtonTwo = document.querySelector('.red-button.small');
+let resultPage = 1;
+const $leftArrow = document.querySelector('.fa-arrow-left');
+const $rightArrow = document.querySelector('.fa-arrow-right');
 
+$searchButtonTwo.addEventListener('click', getSearchValue2);
 $searchButton.addEventListener('click', getSearchValue);
+$rightArrow.addEventListener('click', getNext4Results);
+$leftArrow.addEventListener('click', getLast4Results);
+
+function getSearchValue2(event) {
+  resultPage = 1;
+  deleteResultDOMElements();
+  results = [{}, {}, {}, {}];
+  event.preventDefault();
+  $searchQuery = $searchBarTwo.value;
+  $homeForm.reset();
+  $containerOne.setAttribute('class', 'container-1 hidden');
+  $containerTwo.setAttribute('class', 'container-2');
+  get4Results($searchQuery, resultPage);
+}
 
 function getSearchValue(event) {
-  const resultPage = '1';
+  resultPage = 1;
+  results = [{}, {}, {}, {}];
   event.preventDefault();
   $searchQuery = $searchBar.value;
   $homeForm.reset();
@@ -53,6 +74,7 @@ function load4ResultsInfo() {
 }
 
 function renderResults() {
+  $allResults.innerHTML = '';
   const $resultOne = document.createElement('div');
   $resultOne.setAttribute('class', 'result-1');
   $allResults.appendChild($resultOne);
@@ -128,4 +150,27 @@ function renderResults() {
   $titleFour.textContent = results[3].title;
   $titleFour.setAttribute('class', 'title');
   $titleDivFour.appendChild($titleFour);
+}
+
+function deleteResultDOMElements() {
+  const $resultOne = document.querySelector('.result-1');
+  $resultOne.remove();
+  const $resultTwo = document.querySelector('.result-2');
+  $resultTwo.remove();
+  const $resultThree = document.querySelector('.result-3');
+  $resultThree.remove();
+  const $resultFour = document.querySelector('.result-4');
+  $resultFour.remove();
+}
+
+function getNext4Results() {
+  resultPage++;
+  get4Results($searchQuery, resultPage);
+}
+
+function getLast4Results() {
+  if (resultPage !== 1) {
+    resultPage--;
+    get4Results($searchQuery, resultPage);
+  }
 }

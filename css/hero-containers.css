@@ -1,3 +1,13 @@
+.container-1 {
+  background-color: #ee9eba;
+  border-radius: 41px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .red-container {
   width: 90vw;
   height: auto;
@@ -6,8 +16,10 @@
   border: solid 1px black;
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin: 2rem;
+  margin-top: -2rem;
   padding-top: 0.1rem;
+  flex-shrink: 1;
 }
 
 .orange-container {
@@ -57,4 +69,17 @@
   border: solid 1px black;
   margin-bottom: 2rem;
   padding-top: 0.1rem;
+}
+
+.droopy-eyes {
+  margin-top: -3rem;
+  height: 30%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#droopy {
+  max-height: 100%;
+  max-width: 100%;
 }

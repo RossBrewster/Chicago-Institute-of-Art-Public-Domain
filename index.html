@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Erica+One&display=swap" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/containers.css">
+  <link rel="stylesheet" href="css/hero-containers.css">
+  <link rel="stylesheet" href="css/results-containers.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -18,11 +19,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="container">
-    <div class="eyes">
-      <img id="droopy" src="images/droopyEyes.svg" alt="droopyEyes">
+  <div class="container-1 ">
+    <div class="droopy-eyes">
+      <img id="droopy" src="images/droopyEyes.svg" alt="droopy-eyes">
     </div>
-    <div class="hero-section ">
+    <div class="hero-section">
       <div class="red-container" id="home-red-container">
         <div class="orange-container">
           <div class="yellow-container">
@@ -52,6 +53,53 @@
                     </div>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-2 hidden">
+    <div class="split-eyes">
+      <img id="split" src="images/splitEyes.svg" alt="split-eyes">
+    </div>
+    <div class="results-view-form">
+      <form>
+        <div class="row search-row">
+          <label for="results-view-search-bar" class="hidden"></label>
+          <input type="text" id="results-view-search-bar"/>
+          <div class="red-button small">
+            <div class="orange-button small">
+              <div class="yellow-button small">
+                <div class="green-button small">
+                  <div class="blue-button small">
+                    <button type="submit">Search</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="red-results-container">
+      <div class="orange-results-container">
+        <div class="yellow-results-container">
+          <div class="green-results-container">
+            <div class="blue-results-container">
+              <div class="results">
+                <div class="row">
+                  <h1 class="heading">Results</h1>
+                </div>
+                <div>
+                  <div class="row column-results-content">
+                    <div class="side-column"><i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i></div>
+                    <div class="all-results">
+                    </div>
+                    <div class="side-column"><i class="fa-solid fa-arrow-right fa-2xl" style="color: #ffffff;"></i></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

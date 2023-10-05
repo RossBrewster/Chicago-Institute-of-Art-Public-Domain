@@ -5,15 +5,17 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .row {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
-.container {
+.container-1,
+.container-2 {
   background-color: #ee9eba;
   width: 95vw;
   height: 90vh;
@@ -24,9 +26,21 @@ body {
   position: relative;
 }
 
-.eyes {
+.droopy-eyes {
   margin: 0 auto;
   margin: -2rem 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.split-eyes {
+  margin: 0 auto;
+
+  /* margin: -2rem 1rem; */
   margin-left: 1rem;
   margin-right: 1rem;
   display: flex;
@@ -131,4 +145,110 @@ body {
     flex-direction: column;
     justify-content: space-around;
   }
+}
+
+.container-2 {
+  gap: 1rem;
+}
+
+.search-row {
+  /* height: 1.5rem; */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.red-button.small {
+  margin: 0;
+  width: 15%;
+}
+
+.orange-button.small,
+.yellow-button.small,
+.green-button.small,
+.blue-button.small {
+  width: 95%;
+}
+
+#results-view-search-bar {
+  width: 40%;
+  height: 3rem;
+  border-radius: 10px;
+  border: solid black 1px;
+}
+
+.results {
+  width: 100%;
+  flex-basis: 100%;
+  justify-content: space-around;
+}
+
+.all-results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-results-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.result-1,
+.result-2,
+.result-3,
+.result-4 {
+  width: 20%;
+  height: 35vh;
+  border-radius: px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-1,
+.image-2,
+.image-3,
+.image-4 {
+  background-color: white;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  border-radius: 25px;
+  border: solid 2px black;
+}
+
+#img-1,
+#img-2,
+#img-3,
+#img-4 {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.title {
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+i {
+  margin-bottom: 3rem;
+
+  /* margin-left: 3rem;
+  margin-right: 3rem; */
 }

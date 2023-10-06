@@ -12,15 +12,38 @@ let resultPage = 1;
 const $leftArrow = document.querySelector('.fa-arrow-left');
 const $rightArrow = document.querySelector('.fa-arrow-right');
 const $resultsForm = document.querySelector('.results-view-form > form');
+const $resultOne = document.createElement('div');
+const $resultTwo = document.createElement('div');
+const $resultThree = document.createElement('div');
+const $resultFour = document.createElement('div');
+const $containerThree = document.querySelector('.container-3');
+const $exit = document.querySelector('.fa-circle-xmark');
+const $artTitle = document.querySelector('.art-title');
+const $artist = document.querySelector('.artist');
+const $description = document.querySelector('.description');
+const $largeImage = document.querySelector('#large');
+
+$allResults.appendChild($resultOne);
+$allResults.appendChild($resultTwo);
+$allResults.appendChild($resultThree);
+$allResults.appendChild($resultFour);
+$resultOne.setAttribute('class', 'result-1 xs');
+$resultTwo.setAttribute('class', 'result-2 xs');
+$resultThree.setAttribute('class', 'result-3 xs');
+$resultFour.setAttribute('class', 'result-4 xs');
 
 $searchButtonTwo.addEventListener('click', getSearchValue2);
 $searchButton.addEventListener('click', getSearchValue);
 $rightArrow.addEventListener('click', getNext4Results);
 $leftArrow.addEventListener('click', getLast4Results);
+$resultOne.addEventListener('click', showResultOneInfo);
+$resultTwo.addEventListener('click', showResultTwoInfo);
+$resultThree.addEventListener('click', showResultThreeInfo);
+$resultFour.addEventListener('click', showResultFourInfo);
+$exit.addEventListener('click', hideInfo);
 
 function getSearchValue2(event) {
   resultPage = 1;
-  deleteResultDOMElements();
   results = [{}, {}, {}, {}];
   event.preventDefault();
   $searchQuery = $searchBarTwo.value;
@@ -75,10 +98,11 @@ function load4ResultsInfo() {
 }
 
 function renderResults() {
-  $allResults.innerHTML = '';
-  const $resultOne = document.createElement('div');
-  $resultOne.setAttribute('class', 'result-1 xs');
-  $allResults.appendChild($resultOne);
+  $resultOne.innerHTML = '';
+  $resultTwo.innerHTML = '';
+  $resultThree.innerHTML = '';
+  $resultFour.innerHTML = '';
+
   const $imageDivOne = document.createElement('div');
   $imageDivOne.setAttribute('class', 'image-1');
   $resultOne.appendChild($imageDivOne);
@@ -95,9 +119,6 @@ function renderResults() {
   $titleOne.setAttribute('class', 'title');
   $titleDivOne.appendChild($titleOne);
 
-  const $resultTwo = document.createElement('div');
-  $resultTwo.setAttribute('class', 'result-2 xs');
-  $allResults.appendChild($resultTwo);
   const $imageDivTwo = document.createElement('div');
   $imageDivTwo.setAttribute('class', 'image-2');
   $resultTwo.appendChild($imageDivTwo);
@@ -114,9 +135,6 @@ function renderResults() {
   $titleTwo.setAttribute('class', 'title');
   $titleDivTwo.appendChild($titleTwo);
 
-  const $resultThree = document.createElement('div');
-  $resultThree.setAttribute('class', 'result-3 xs');
-  $allResults.appendChild($resultThree);
   const $imageDivThree = document.createElement('div');
   $imageDivThree.setAttribute('class', 'image-3');
   $resultThree.appendChild($imageDivThree);
@@ -133,9 +151,6 @@ function renderResults() {
   $titleThree.setAttribute('class', 'title');
   $titleDivThree.appendChild($titleThree);
 
-  const $resultFour = document.createElement('div');
-  $resultFour.setAttribute('class', 'result-4 xs');
-  $allResults.appendChild($resultFour);
   const $imageDivFour = document.createElement('div');
   $imageDivFour.setAttribute('class', 'image-4');
   $resultFour.appendChild($imageDivFour);
@@ -153,17 +168,6 @@ function renderResults() {
   $titleDivFour.appendChild($titleFour);
 }
 
-function deleteResultDOMElements() {
-  const $resultOne = document.querySelector('.result-1');
-  $resultOne.remove();
-  const $resultTwo = document.querySelector('.result-2');
-  $resultTwo.remove();
-  const $resultThree = document.querySelector('.result-3');
-  $resultThree.remove();
-  const $resultFour = document.querySelector('.result-4');
-  $resultFour.remove();
-}
-
 function getNext4Results() {
   resultPage++;
   get4Results($searchQuery, resultPage);
@@ -174,4 +178,44 @@ function getLast4Results() {
     resultPage--;
     get4Results($searchQuery, resultPage);
   }
+}
+
+function showResultOneInfo(event) {
+  $containerThree.setAttribute('class', 'container-3');
+  $largeImage.setAttribute('src', 'https://www.artic.edu/iiif/2/' + results[0].imageId + '/full/843,/0/default.jpg');
+  $largeImage.setAttribute('alt', results[0].altText);
+  $artTitle.innerHTML = results[0].title;
+  $artist.innerHTML = results[0].artist;
+  $description.innerHTML = results[0].description;
+}
+
+function showResultTwoInfo(event) {
+  $containerThree.setAttribute('class', 'container-3');
+  $largeImage.setAttribute('src', 'https://www.artic.edu/iiif/2/' + results[1].imageId + '/full/843,/0/default.jpg');
+  $largeImage.setAttribute('alt', results[1].altText);
+  $artTitle.innerHTML = results[1].title;
+  $artist.innerHTML = results[1].artist;
+  $description.innerHTML = results[1].description;
+}
+
+function showResultThreeInfo(event) {
+  $containerThree.setAttribute('class', 'container-3');
+  $largeImage.setAttribute('src', 'https://www.artic.edu/iiif/2/' + results[2].imageId + '/full/843,/0/default.jpg');
+  $largeImage.setAttribute('alt', results[2].altText);
+  $artTitle.innerHTML = results[2].title;
+  $artist.innerHTML = results[2].artist;
+  $description.innerHTML = results[2].description;
+}
+
+function showResultFourInfo(event) {
+  $containerThree.setAttribute('class', 'container-3');
+  $largeImage.setAttribute('src', 'https://www.artic.edu/iiif/2/' + results[3].imageId + '/full/843,/0/default.jpg');
+  $largeImage.setAttribute('alt', results[3].altText);
+  $artTitle.innerHTML = results[3].title;
+  $artist.innerHTML = results[3].artist;
+  $description.innerHTML = results[3].description;
+}
+
+function hideInfo(event) {
+  $containerThree.setAttribute('class', 'container-3 hidden');
 }

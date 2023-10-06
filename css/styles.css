@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/gridOpaque.png");
+  background-image: url("../images/opaque-grid.png");
   background-size: 100% 100vh;
   background-repeat: no-repeat;
 }
@@ -14,37 +14,58 @@ body {
   border-radius: 41px;
 }
 
+.pink-information-container {
+  background-color: #ee9eba;
+  border: solid black 1px;
+  border-radius: 41px;
+}
+
 .red-container,
 .orange-container,
 .yellow-container,
 .green-container,
-.blue-container {
+.blue-container,
+.red-results-container,
+.orange-results-container,
+.yellow-results-container,
+.green-results-container,
+.blue-results-container,
+.red-information-container,
+.orange-information-container,
+.yellow-information-container,
+.green-information-container,
+.blue-information-container {
   border: solid 1px black;
   border-radius: 41px;
 }
 
 .red-container,
-.red-results-container {
+.red-results-container,
+.red-information-container {
   background-color: #eb4745;
 }
 
 .orange-container,
-.orange-results-container {
+.orange-results-container,
+.orange-information-container {
   background-color: #e88728;
 }
 
 .yellow-container,
-.yellow-results-container {
+.yellow-results-container,
+.yellow-information-container {
   background-color: #f1b021;
 }
 
 .green-container,
-.green-results-container {
+.green-results-container,
+.green-information-container {
   background-color: #6fb94f;
 }
 
 .blue-container,
-.blue-results-container {
+.blue-results-container,
+.blue-information-container {
   background-color: #3ca4d9;
 }
 
@@ -74,15 +95,6 @@ body {
   border: solid black 1px;
 }
 
-.red-results-container,
-.orange-results-container,
-.yellow-results-container,
-.green-results-container,
-.blue-results-container {
-  border: solid black 1px;
-  border-radius: 41px;
-}
-
 .title-1,
 .title-2,
 .title-3,
@@ -110,4 +122,24 @@ body {
   .heading {
     font-size: 1.25rem;
   }
+}
+
+.large-image {
+  background-color: white;
+  border: solid 2px black;
+}
+
+#large {
+  border: solid 2px white;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 0.7rem;
 }

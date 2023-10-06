@@ -14,6 +14,34 @@ body {
   width: 90%;
 }
 
+.container-3 {
+  background-image: url("../images/semi-transparent-grid.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink-information-container {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (width < 760px) {
+  .pink-information-container {
+    min-width: 90%;
+  }
+}
+
 .split-eyes {
   display: flex;
   justify-content: center;
@@ -241,4 +269,127 @@ i {
   padding: 2rem;
   cursor: pointer;
   margin: 0;
+}
+
+.red-information-container,
+.orange-information-container,
+.yellow-information-container,
+.green-information-container,
+.blue-information-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.red-information-container {
+  width: 95%;
+  height: 90%;
+}
+
+.orange-information-container,
+.yellow-information-container,
+.green-information-container,
+.blue-information-container {
+  width: 99%;
+  height: 97%;
+  margin-top: 0.1rem;
+}
+
+.wide-eyes {
+  margin-top: -3rem;
+  width: 25vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 5rem;
+}
+
+#wide {
+  max-width: 50vw;
+}
+
+.top-half {
+  width: 100%;
+
+  /* margin-top: 3.5rem; */
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.large-image {
+  flex-basis: 45%;
+  width: 90%;
+  height: 100%;
+  border-radius: 27px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (width < 500px) {
+  .large-image {
+    flex-basis: 90%;
+  }
+
+  .top-half {
+    margin-top: 1.5rem;
+    flex-wrap: wrap-reverse;
+  }
+
+  .column-half {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .artist {
+    margin-top: 0.1rem;
+  }
+}
+
+#large {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.row-align-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-circle-xmark,
+.fa-heart {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.column-half {
+  width: 45%;
+}
+
+.bottom-half {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  height: 35%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  overflow-y: scroll;
 }

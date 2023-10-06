@@ -1,7 +1,6 @@
 .red-button {
-  width: 16rem;
+  width: 25vw;
   height: 3rem;
-  margin: 2rem;
   background-color: #eb4745;
   display: flex;
   justify-content: center;
@@ -11,7 +10,7 @@
 }
 
 .orange-button {
-  width: 15rem;
+  width: 95%;
   height: 2.7rem;
   background-color: #e88728;
   display: flex;
@@ -22,7 +21,7 @@
 }
 
 .yellow-button {
-  width: 14rem;
+  width: 95%;
   height: 2.4rem;
   background-color: #f1b021;
   display: flex;
@@ -33,7 +32,7 @@
 }
 
 .green-button {
-  width: 13rem;
+  width: 95%;
   height: 2.1rem;
   background-color: #6fb94f;
   display: flex;
@@ -44,7 +43,7 @@
 }
 
 .blue-button {
-  width: 12rem;
+  width: 95%;
   height: 1.8rem;
   background-color: #3ca4d9;
   display: flex;
@@ -55,7 +54,7 @@
 }
 
 button {
-  width: 90%;
+  width: 95%;
   height: 1.5rem;
   color: white;
   background-color: black;

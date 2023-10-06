@@ -308,13 +308,11 @@ i {
 }
 
 #wide {
-  max-width: 50vw;
+  max-width: 45vw;
 }
 
 .top-half {
   width: 100%;
-
-  /* margin-top: 3.5rem; */
   height: 50%;
   display: flex;
   justify-content: space-around;
@@ -332,6 +330,28 @@ i {
   align-items: center;
 }
 
+.column-half {
+  width: 45%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: none;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+.art-title {
+  overflow-y: scroll;
+  max-height: 80%;
+}
+
 @media only screen and (width < 500px) {
   .large-image {
     flex-basis: 90%;
@@ -343,7 +363,7 @@ i {
   }
 
   .column-half {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -354,8 +374,13 @@ i {
     margin: 0;
   }
 
+  .art-title {
+    max-height: 2rem;
+  }
+
   .artist {
     margin-top: 0.1rem;
+    overflow-y: scroll;
   }
 }
 
@@ -379,10 +404,6 @@ i {
   margin-bottom: 1.5rem;
   margin-right: 1rem;
   cursor: pointer;
-}
-
-.column-half {
-  width: 45%;
 }
 
 .bottom-half {

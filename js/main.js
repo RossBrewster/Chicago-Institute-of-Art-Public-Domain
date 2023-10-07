@@ -187,6 +187,7 @@ function showResultOneInfo(event) {
   $artTitle.innerHTML = results[0].title;
   $artist.innerHTML = results[0].artist;
   $description.innerHTML = results[0].description;
+  addToData(0);
 }
 
 function showResultTwoInfo(event) {
@@ -196,6 +197,7 @@ function showResultTwoInfo(event) {
   $artTitle.innerHTML = results[1].title;
   $artist.innerHTML = results[1].artist;
   $description.innerHTML = results[1].description;
+  addToData(1);
 }
 
 function showResultThreeInfo(event) {
@@ -205,6 +207,7 @@ function showResultThreeInfo(event) {
   $artTitle.innerHTML = results[2].title;
   $artist.innerHTML = results[2].artist;
   $description.innerHTML = results[2].description;
+  addToData(2);
 }
 
 function showResultFourInfo(event) {
@@ -214,8 +217,22 @@ function showResultFourInfo(event) {
   $artTitle.innerHTML = results[3].title;
   $artist.innerHTML = results[3].artist;
   $description.innerHTML = results[3].description;
+  addToData(3);
 }
 
 function hideInfo(event) {
   $containerThree.setAttribute('class', 'container-3 hidden');
+}
+
+function addToData(resultsIndex) {
+  let foundInArray = false;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].link === results[resultsIndex].link) {
+      foundInArray = true;
+    }
+  }
+  if (foundInArray === false) {
+    results[resultsIndex].isFavorited = false;
+    data.push(results[resultsIndex]);
+  }
 }

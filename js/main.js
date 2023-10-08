@@ -22,6 +22,8 @@ const $artTitle = document.querySelector('.art-title');
 const $artist = document.querySelector('.artist');
 const $description = document.querySelector('.description');
 const $largeImage = document.querySelector('#large');
+const $likeButton = document.querySelector('.like-button');
+let viewing = {};
 
 $allResults.appendChild($resultOne);
 $allResults.appendChild($resultTwo);
@@ -41,6 +43,7 @@ $resultTwo.addEventListener('click', showResultTwoInfo);
 $resultThree.addEventListener('click', showResultThreeInfo);
 $resultFour.addEventListener('click', showResultFourInfo);
 $exit.addEventListener('click', hideInfo);
+$likeButton.addEventListener('click', handleLike);
 
 function getSearchValue2(event) {
   resultPage = 1;
@@ -187,6 +190,8 @@ function showResultOneInfo(event) {
   $artTitle.innerHTML = results[0].title;
   $artist.innerHTML = results[0].artist;
   $description.innerHTML = results[0].description;
+  viewing = results[0];
+  addToData(0);
 }
 
 function showResultTwoInfo(event) {
@@ -196,6 +201,8 @@ function showResultTwoInfo(event) {
   $artTitle.innerHTML = results[1].title;
   $artist.innerHTML = results[1].artist;
   $description.innerHTML = results[1].description;
+  viewing = results[1];
+  addToData(1);
 }
 
 function showResultThreeInfo(event) {
@@ -205,6 +212,8 @@ function showResultThreeInfo(event) {
   $artTitle.innerHTML = results[2].title;
   $artist.innerHTML = results[2].artist;
   $description.innerHTML = results[2].description;
+  viewing = results[2];
+  addToData(2);
 }
 
 function showResultFourInfo(event) {
@@ -214,8 +223,58 @@ function showResultFourInfo(event) {
   $artTitle.innerHTML = results[3].title;
   $artist.innerHTML = results[3].artist;
   $description.innerHTML = results[3].description;
+  viewing = results[3];
+  addToData(3);
 }
 
 function hideInfo(event) {
   $containerThree.setAttribute('class', 'container-3 hidden');
+}
+
+function addToData(resultsIndex) {
+  const newDataEntry = {
+    altText: results[resultsIndex].altText,
+    artist: results[resultsIndex].artist,
+    description: results[resultsIndex].description,
+    imageId: results[resultsIndex].imageId,
+    link: results[resultsIndex].link,
+    title: results[resultsIndex].title
+  };
+  let foundInArray = false;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].link === results[resultsIndex].link) {
+      foundInArray = true;
+      if (data[i].isFavorited === true) {
+        $likeButton.setAttribute('style', 'color: #FF0000;');
+      } else {
+        $likeButton.setAttribute('style', 'color: #FFF;');
+      }
+    }
+  }
+  if (foundInArray === false) {
+    results[resultsIndex].isFavorited = false;
+    data.push(newDataEntry);
+    $likeButton.setAttribute('style', 'color: #FFF;');
+
+  }
+}
+
+function handleLike() {
+  if (viewing.isFavorited === false) {
+    viewing.isFavorited = true;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].link === viewing.link) {
+        data[i].isFavorited = true;
+      }
+    }
+    $likeButton.setAttribute('style', 'color: #FF0000;');
+  } else {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].link === viewing.link) {
+        data[i].isFavorited = false;
+      }
+    }
+    $likeButton.setAttribute('style', 'color: #FFF;');
+  }
+
 }

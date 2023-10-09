@@ -173,3 +173,8 @@ p {
   font-size: 1rem;
   color: black;
 }
+
+.fa-regular,
+.fa-solid {
+  cursor: pointer;
+}

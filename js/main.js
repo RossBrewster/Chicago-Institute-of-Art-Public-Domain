@@ -48,6 +48,7 @@ $resultFour.addEventListener('click', showResultFourInfo);
 $exit.addEventListener('click', hideInfo);
 $likeButton.addEventListener('click', handleLike);
 $favoritesButton.addEventListener('click', handleFavoritesClick);
+$favoritesContainer.addEventListener('click', handleDeleteOrHasSeenClick);
 
 function getSearchValue2(event) {
   resultPage = 1;
@@ -289,6 +290,7 @@ function handleLike() {
 function renderFavorite(i) {
   const $favorite = document.createElement('div');
   $favorite.setAttribute('class', 'favorite');
+  $favorite.setAttribute('id', data[i].artworkId);
   $favoritesContainer.appendChild($favorite);
 
   const $favImageHolder = document.createElement('div');
@@ -321,6 +323,9 @@ function renderFavorite(i) {
 
   const $eyecon = document.createElement('i');
   $eyecon.setAttribute('class', 'fa-regular fa-eye fa-lg');
+  if (data[i].hasSeen === true) {
+    $eyecon.setAttribute('style', 'color: #33A33C;');
+  }
   $eyecon.setAttribute('style', 'color: #000000;');
   $iconColumn.appendChild($eyecon);
 
@@ -340,5 +345,11 @@ function handleFavoritesClick() {
     if (data[i].isFavorited === true) {
       renderFavorite(i);
     }
+  }
+}
+
+function handleDeleteOrHasSeenClick(e) {
+  if (e.target.getAttribute('class') === 'fa-regular fa-eye fa-lg') {
+    e.target.setAttribute('style', 'color: #33A33C;');
   }
 }

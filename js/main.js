@@ -96,6 +96,7 @@ function load4ResultsInfo() {
       results[i].artist = xhr.response.data.artist_title;
       results[i].title = xhr.response.data.title;
       results[i].altText = xhr.response.data.thumbnail.alt_text;
+      results[i].artworkId = xhr.response.data.id;
       if (results[3].imageId && results[2].imageId && results[1].imageId && results[0].imageId) {
         renderResults();
       }

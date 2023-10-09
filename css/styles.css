@@ -9,7 +9,8 @@ body {
 }
 
 .container-1,
-.container-2 {
+.container-2,
+.container-4 {
   background-color: #ee9eba;
   border-radius: 41px;
 }
@@ -41,31 +42,36 @@ body {
 
 .red-container,
 .red-results-container,
-.red-information-container {
+.red-information-container,
+.red-favorites-container {
   background-color: #eb4745;
 }
 
 .orange-container,
 .orange-results-container,
-.orange-information-container {
+.orange-information-container,
+.orange-favorites-container {
   background-color: #e88728;
 }
 
 .yellow-container,
 .yellow-results-container,
-.yellow-information-container {
+.yellow-information-container,
+.yellow-favorites-container {
   background-color: #f1b021;
 }
 
 .green-container,
 .green-results-container,
-.green-information-container {
+.green-information-container,
+.green-favorites-container {
   background-color: #6fb94f;
 }
 
 .blue-container,
 .blue-results-container,
-.blue-information-container {
+.blue-information-container,
+.blue-favorites-container {
   background-color: #3ca4d9;
 }
 
@@ -108,14 +114,21 @@ body {
 .image-4 {
   background-color: white;
   border: solid 2px black;
+  border-radius: 25px;
 }
 
 #img-1,
 #img-2,
 #img-3,
-#img-4 {
+#img-4,
+.fav-img {
   border: 2px solid white;
   cursor: pointer;
+  border-radius: 25px;
+}
+
+.fav-img {
+  border: 1px solid black;
 }
 
 @media only screen and (height < 721px) {
@@ -142,4 +155,21 @@ p {
   font-family: "Open Sans", sans-serif;
   color: white;
   font-size: 0.7rem;
+}
+
+.favorite {
+  border-radius: 27px;
+  border: solid black 1px;
+  background-color: white;
+}
+
+.text {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+
+.text-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: black;
 }

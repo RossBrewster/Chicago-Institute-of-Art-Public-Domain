@@ -243,7 +243,9 @@ function addToData(resultsIndex) {
     description: results[resultsIndex].description,
     imageId: results[resultsIndex].imageId,
     link: results[resultsIndex].link,
-    title: results[resultsIndex].title
+    title: results[resultsIndex].title,
+    artworkId: results[resultsIndex].artworkId,
+    hasSeen: false
   };
   let foundInArray = false;
   for (let i = 0; i < data.length; i++) {

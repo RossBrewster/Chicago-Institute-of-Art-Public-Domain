@@ -326,7 +326,7 @@ body {
   height: 97.5%;
   overflow: hidden;
   border-radius: 25px;
-  margin-left: 0.1rem;
+  margin-left: 0.2rem;
 }
 
 #img-1,
@@ -357,18 +357,11 @@ i {
   margin: 0;
 }
 
-.red-information-container,
-.orange-information-container,
-.yellow-information-container,
-.green-information-container,
-.blue-information-container, {
+.red-information-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-
-.red-information-container {
   width: 95%;
   height: 90%;
 }
@@ -380,6 +373,10 @@ i {
   width: 99%;
   height: 97%;
   margin-top: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .wide-eyes {
@@ -504,4 +501,11 @@ i {
 
 .fa-lg {
   margin: 1.5rem;
+}
+
+.info {
+  flex-basis: 30%;
+  overflow-y: scroll;
+  max-height: 100%;
+  margin-left: 0.2rem;
 }

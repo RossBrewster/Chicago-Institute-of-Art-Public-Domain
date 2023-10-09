@@ -127,6 +127,10 @@ body {
   border-radius: 25px;
 }
 
+.fav-img {
+  border: 1px solid black;
+}
+
 @media only screen and (height < 721px) {
   .heading {
     font-size: 1.25rem;
@@ -157,4 +161,15 @@ p {
   border-radius: 27px;
   border: solid black 1px;
   background-color: white;
+}
+
+.text {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+
+.text-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: black;
 }

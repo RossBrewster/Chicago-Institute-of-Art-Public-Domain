@@ -23,7 +23,10 @@ const $artist = document.querySelector('.artist');
 const $description = document.querySelector('.description');
 const $largeImage = document.querySelector('#large');
 const $likeButton = document.querySelector('.like-button');
+const $favoritesButton = document.querySelector('.favorites-button');
+const $favoritesContainer = document.querySelector('.blue-favorites-container');
 let viewing = {};
+const $containerFour = document.querySelector('.container-4');
 
 $allResults.appendChild($resultOne);
 $allResults.appendChild($resultTwo);
@@ -44,6 +47,7 @@ $resultThree.addEventListener('click', showResultThreeInfo);
 $resultFour.addEventListener('click', showResultFourInfo);
 $exit.addEventListener('click', hideInfo);
 $likeButton.addEventListener('click', handleLike);
+$favoritesButton.addEventListener('click', handleFavoritesClick);
 
 function getSearchValue2(event) {
   resultPage = 1;
@@ -277,4 +281,61 @@ function handleLike() {
     $likeButton.setAttribute('style', 'color: #FFF;');
   }
 
+}
+
+function renderFavorite(i) {
+  const $favorite = document.createElement('div');
+  $favorite.setAttribute('class', 'favorite');
+  $favoritesContainer.appendChild($favorite);
+
+  const $favImageHolder = document.createElement('div');
+  $favImageHolder.setAttribute('class', 'favorite-image-holder');
+  $favorite.appendChild($favImageHolder);
+
+  const $favImage = document.createElement('img');
+  $favImage.setAttribute('src', 'https://www.artic.edu/iiif/2/' + data[i].imageId + '/full/843,/0/default.jpg');
+  $favImage.setAttribute('alt', data[i].altText);
+  $favImage.setAttribute('class', 'fav-img');
+  $favImageHolder.appendChild($favImage);
+
+  const $infoDiv = document.createElement('div');
+  $infoDiv.setAttribute('class', 'info');
+  $favorite.appendChild($infoDiv);
+
+  const $favTitle = document.createElement('p');
+  $favTitle.setAttribute('class', 'text-title no-text');
+  $favTitle.textContent = data[i].title;
+  $infoDiv.appendChild($favTitle);
+
+  const $favArtist = document.createElement('p');
+  $favArtist.setAttribute('class', 'text no-text');
+  $favArtist.textContent = data[i].artist;
+  $infoDiv.appendChild($favArtist);
+
+  const $iconColumn = document.createElement('div');
+  $iconColumn.setAttribute('class', 'icon-column');
+  $favorite.appendChild($iconColumn);
+
+  const $eyecon = document.createElement('i');
+  $eyecon.setAttribute('class', 'fa-regular fa-eye fa-lg');
+  $eyecon.setAttribute('style', 'color: #000000;');
+  $iconColumn.appendChild($eyecon);
+
+  const $deleteIcon = document.createElement('i');
+  $deleteIcon.setAttribute('class', 'fa-solid fa-trash fa-lg');
+  $deleteIcon.setAttribute('style', 'color: #ff0000;');
+  $iconColumn.appendChild($deleteIcon);
+}
+
+function handleFavoritesClick() {
+  $favoritesContainer.innerHTML = '';
+  $favoritesButton.setAttribute('class', 'favorites-button hidden');
+  $containerOne.setAttribute('class', 'container-1 hidden');
+  $containerTwo.setAttribute('class', 'container-2 hidden');
+  $containerFour.setAttribute('class', 'container-4');
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].isFavorited === true) {
+      renderFavorite(i);
+    }
+  }
 }

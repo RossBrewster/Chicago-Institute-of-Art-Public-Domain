@@ -48,6 +48,7 @@ $resultFour.addEventListener('click', showResultFourInfo);
 $exit.addEventListener('click', hideInfo);
 $likeButton.addEventListener('click', handleLike);
 $favoritesButton.addEventListener('click', handleFavoritesClick);
+$favoritesContainer.addEventListener('click', handleDeleteOrHasSeenClick);
 
 function getSearchValue2(event) {
   resultPage = 1;
@@ -96,6 +97,7 @@ function load4ResultsInfo() {
       results[i].artist = xhr.response.data.artist_title;
       results[i].title = xhr.response.data.title;
       results[i].altText = xhr.response.data.thumbnail.alt_text;
+      results[i].artworkId = xhr.response.data.id;
       if (results[3].imageId && results[2].imageId && results[1].imageId && results[0].imageId) {
         renderResults();
       }
@@ -242,7 +244,9 @@ function addToData(resultsIndex) {
     description: results[resultsIndex].description,
     imageId: results[resultsIndex].imageId,
     link: results[resultsIndex].link,
-    title: results[resultsIndex].title
+    title: results[resultsIndex].title,
+    artworkId: results[resultsIndex].artworkId,
+    hasSeen: false
   };
   let foundInArray = false;
   for (let i = 0; i < data.length; i++) {
@@ -286,6 +290,7 @@ function handleLike() {
 function renderFavorite(i) {
   const $favorite = document.createElement('div');
   $favorite.setAttribute('class', 'favorite');
+  $favorite.setAttribute('id', data[i].artworkId);
   $favoritesContainer.appendChild($favorite);
 
   const $favImageHolder = document.createElement('div');
@@ -318,7 +323,10 @@ function renderFavorite(i) {
 
   const $eyecon = document.createElement('i');
   $eyecon.setAttribute('class', 'fa-regular fa-eye fa-lg');
-  $eyecon.setAttribute('style', 'color: #000000;');
+  if (data[i].hasSeen === true) {
+    $eyecon.setAttribute('style', 'color: #33A33C;');
+  } else { $eyecon.setAttribute('style', 'color: #000000;'); }
+
   $iconColumn.appendChild($eyecon);
 
   const $deleteIcon = document.createElement('i');
@@ -336,6 +344,17 @@ function handleFavoritesClick() {
   for (let i = 0; i < data.length; i++) {
     if (data[i].isFavorited === true) {
       renderFavorite(i);
+    }
+  }
+}
+
+function handleDeleteOrHasSeenClick(e) {
+  if (e.target.getAttribute('class') === 'fa-regular fa-eye fa-lg') {
+    e.target.setAttribute('style', 'color: #33A33C;');
+    for (let i = 0; i < data.length; i++) {
+      if (e.target.closest('.favorite').getAttribute('id') === `${data[i].artworkId}`) {
+        data[i].hasSeen = true;
+      }
     }
   }
 }

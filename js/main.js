@@ -325,8 +325,8 @@ function renderFavorite(i) {
   $eyecon.setAttribute('class', 'fa-regular fa-eye fa-lg');
   if (data[i].hasSeen === true) {
     $eyecon.setAttribute('style', 'color: #33A33C;');
-  }
-  $eyecon.setAttribute('style', 'color: #000000;');
+  } else { $eyecon.setAttribute('style', 'color: #000000;'); }
+
   $iconColumn.appendChild($eyecon);
 
   const $deleteIcon = document.createElement('i');
@@ -351,5 +351,10 @@ function handleFavoritesClick() {
 function handleDeleteOrHasSeenClick(e) {
   if (e.target.getAttribute('class') === 'fa-regular fa-eye fa-lg') {
     e.target.setAttribute('style', 'color: #33A33C;');
+    for (let i = 0; i < data.length; i++) {
+      if (e.target.closest('.favorite').getAttribute('id') === `${data[i].artworkId}`) {
+        data[i].hasSeen = true;
+      }
+    }
   }
 }

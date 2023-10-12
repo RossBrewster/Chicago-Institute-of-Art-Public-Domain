@@ -27,6 +27,11 @@ const $favoritesButton = document.querySelector('.favorites-button');
 const $favoritesContainer = document.querySelector('.blue-favorites-container');
 let viewing = {};
 const $containerFour = document.querySelector('.container-4');
+const $containerFive = document.querySelector('.container-5');
+let deleting;
+const $exitDeleteModalIcon = document.querySelector('#exit-delete');
+const $backToHomeButton = document.querySelector('#back-to-home');
+const $deleteButton = document.querySelector('.delete-button');
 
 $allResults.appendChild($resultOne);
 $allResults.appendChild($resultTwo);
@@ -341,6 +346,7 @@ function handleFavoritesClick() {
   $containerOne.setAttribute('class', 'container-1 hidden');
   $containerTwo.setAttribute('class', 'container-2 hidden');
   $containerFour.setAttribute('class', 'container-4');
+  $containerFive.setAttribute('class', 'container-5 hidden');
   for (let i = 0; i < data.length; i++) {
     if (data[i].isFavorited === true) {
       renderFavorite(i);
@@ -356,5 +362,31 @@ function handleDeleteOrHasSeenClick(e) {
         data[i].hasSeen = true;
       }
     }
+  } else if (e.target.getAttribute('class') === 'fa-solid fa-trash fa-lg') {
+    $containerFive.setAttribute('class', 'container-5');
+    for (let i = 0; i < data.length; i++) {
+      if (e.target.closest('.favorite').getAttribute('id') === `${data[i].artworkId}`) {
+        deleting = data[i].artworkId;
+      }
+    }
   }
 }
+
+$exitDeleteModalIcon.addEventListener('click', function () {
+  $containerFive.setAttribute('class', 'container-5 hidden');
+});
+
+$backToHomeButton.addEventListener('click', function () {
+  $containerFour.setAttribute('class', 'container-4 hidden');
+  $containerOne.setAttribute('class', 'container-1');
+  $favoritesButton.setAttribute('class', 'fa-solid fa-heart fa-2xl favorites-button');
+});
+
+$deleteButton.addEventListener('click', function () {
+  for (let i = 0; i < data.length; i++) {
+    if (deleting === data[i].artworkId) {
+      data.splice(i, 1);
+    }
+  }
+  handleFavoritesClick();
+});

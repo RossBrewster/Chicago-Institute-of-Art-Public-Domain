@@ -91,7 +91,8 @@ body {
   }
 }
 
-.container-3 {
+.container-3,
+.container-5 {
   background-image: url("../images/semi-transparent-grid.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -508,4 +509,39 @@ i {
   overflow-y: scroll;
   max-height: 100%;
   margin-left: 0.2rem;
+}
+
+.pink-delete-container {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (width < 800px) {
+  .pink-delete-container {
+    width: 80%;
+  }
+}
+
+.red-delete-container,
+.orange-delete-container,
+.yellow-delete-container,
+.green-delete-container,
+.blue-delete-container {
+  height: 98%;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-delete-container {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
 }
